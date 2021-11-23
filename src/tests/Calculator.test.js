@@ -57,6 +57,18 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('15');
   })
 
+  it('should be able to divide 21 by 7 to get 3', () => {
+    container.find('#number2').simulate('click');
+    container.find('#number1').simulate('click');
+    container.find('#operator-divide').simulate('click');
+    container.find('#number7').simulate('click');
+    container.find('#operator-equals').simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('3');
+  })
+
+  
+
 
 })
 
