@@ -44,6 +44,19 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('3');
   })
 
+  it('should be able to multiply 3 by 5 and get 15', () => {
+    const button3 = container.find('#number3');
+    const buttontimes = container.find('#operator-multiply');
+    const button5 = container.find('#number5');
+    const buttonequal = container.find('#operator-equals');
+    button3.simulate('click');
+    buttontimes.simulate('click');
+    button5.simulate('click');
+    buttonequal.simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('15');
+  })
+
 
 })
 
