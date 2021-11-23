@@ -18,7 +18,7 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('4');
   })
 
-  it('should be able to add two numbers together', () => {
+  it('should be able to add 1 to 4 to get 5', () => {
     const button1 = container.find('#number1');
     const buttonplus = container.find('#operator_add');
     const button4 = container.find('#number4');
@@ -30,5 +30,20 @@ describe('Calculator', () => {
     const runningTotal = container.find('#running-total');
     expect(runningTotal.text()).toEqual('5');
   })
+
+  it('should be able to subtract 4 from 7 to get 3', () => {
+    const button7 = container.find('#number7');
+    const buttonminus = container.find('#operator-subtract');
+    const button4 = container.find('#number4');
+    const buttonequal = container.find('#operator-equals');
+    button7.simulate('click');
+    buttonminus.simulate('click');
+    button4.simulate('click');
+    buttonequal.simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('3');
+  })
+
+
 })
 
