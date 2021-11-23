@@ -21,4 +21,56 @@ describe("Calculator", () => {
     cy.get('#operator-equals').click();
     cy.get('#running-total').should('contain', '6');
   })
+
+  it('should be able to chain multiple operations together', () => {
+    cy.get('#number3').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number2').click();
+    cy.get('#operator_add').click();
+    cy.get('#number1').click();
+    cy.get('#operator-equals').click();
+    cy.get('#running-total').should('contain', '7');
+  })
+
+  it('should be able to give the correct output for positive numbers', () => {
+    cy.get('#number3').click();
+    cy.get('#operator_add').click();
+    cy.get('#number4').click();
+    cy.get('#operator-equals').click();
+    cy.get('#running-total').should('contain', '7');
+  })
+
+  it('should be able to give the correct output for negative numbers', () => {
+    cy.get('#number3').click();
+    cy.get('#operator-subtract').click();
+    cy.get('#number4').click();
+    cy.get('#operator-equals').click();
+    cy.get('#running-total').should('contain', '-1');
+  })
+
+  it('should be able to give the correct output for decimal numbers', () => {
+    cy.get('#number3').click();
+    cy.get('#operator-divide').click();
+    cy.get('#number2').click();
+    cy.get('#operator-equals').click();
+    cy.get('#running-total').should('contain', '1.5');
+  })
+
+  it('should be able to give the correct output for very large numbers', () => {
+    cy.get('#number3').click();
+    cy.get('#number6').click();
+    cy.get('#number4').click();
+    cy.get('#number9').click();
+    cy.get('#number8').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number6').click();
+    cy.get('#number4').click();
+    cy.get('#number9').click();
+    cy.get('#number9').click();
+    cy.get('#operator-equals').click();
+    cy.get('#running-total').should('contain', '237200502');
+  })
+
+  
+
 })
