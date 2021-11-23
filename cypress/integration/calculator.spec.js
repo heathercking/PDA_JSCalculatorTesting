@@ -79,11 +79,4 @@ describe("Calculator", () => {
     cy.get('#running-total').should('contain', 'cannot divide by 0');
   })
 
-  
-
-
-
 })
-
-//TODO - be able to enter negative numbers (not just have them returned)
-//TODO - be able to divide by zero
