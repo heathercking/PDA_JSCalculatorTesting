@@ -85,7 +85,7 @@ function App() {
     if (isFinite(answer)) {
       setRunningTotal(answer);
     } else {
-      setRunningTotal('cannot divide by 0')
+      setRunningTotal('cannot divide by 0') // returns this error message rather than Infinity
     }
   }
 
