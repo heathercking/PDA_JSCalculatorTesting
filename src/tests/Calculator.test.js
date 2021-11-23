@@ -67,6 +67,15 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('3');
   })
 
+  it('should be able to concatenate multiple number button clicks', () => {
+    container.find('#number9').simulate('click');
+    container.find('#number8').simulate('click');
+    container.find('#number4').simulate('click');
+    container.find('#number7').simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('9847');
+  })
+
   
 
 
