@@ -71,6 +71,19 @@ describe("Calculator", () => {
     cy.get('#running-total').should('contain', '237200502');
   })
 
+  it('should return an error message to handle the exception of dividing by 0', () => {
+    cy.get('#number3').click();
+    cy.get('#operator-divide').click();
+    cy.get('#number0').click();
+    cy.get('#operator-equals').click();
+    cy.get('#running-total').should('contain', 'cannot divide by 0');
+  })
+
   
 
+
+
 })
+
+//TODO - be able to enter negative numbers (not just have them returned)
+//TODO - be able to divide by zero
