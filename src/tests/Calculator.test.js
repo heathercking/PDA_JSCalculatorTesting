@@ -76,7 +76,16 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('9847');
   })
 
-  
+  it('should be able to chain multiple operations together', () => {
+    container.find('#number2').simulate('click');
+    container.find('#operator_add').simulate('click');
+    container.find('#number1').simulate('click');
+    container.find('#operator-multiply').simulate('click');
+    container.find('#number2').simulate('click');
+    container.find('#operator-equals').simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('6');
+  })
 
 
 })
