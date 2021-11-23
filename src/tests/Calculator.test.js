@@ -87,6 +87,18 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('6');
   })
 
+  it('should be able to clear the runnign total without affecting the calculation', () => {
+    container.find('#number2').simulate('click');
+    container.find('#operator_add').simulate('click');
+    container.find('#number2').simulate('click');
+    container.find('#operator_add').simulate('click');
+    container.find('#number2').simulate('click');
+    container.find('#clear').simulate('click');
+    container.find('#operator-equals').simulate('click');
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('4');
+  })
+
 
 })
 
